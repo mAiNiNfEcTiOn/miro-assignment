@@ -27,7 +27,7 @@ jobs:
     - run: npm i -g yarn@latest
     - run: yarn install --frozen-lockfile
     - run: yarn test
-    - run: yarn build --if-present
+    - run: yarn build
     - run: yarn deploy
       env:
         CI: true

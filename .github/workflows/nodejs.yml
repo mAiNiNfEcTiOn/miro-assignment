@@ -32,13 +32,8 @@ jobs:
     - run: yarn build
       env:
         CI: true
-    - run: |
-        git config --global user.email "$MY_EMAIL"
-        git config --global user.name "$MY_USERNAME"
-        git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}@github.com/$MY_USERNAME/${{ github.repository }}.git"
-      env:
-        MY_EMAIL: ${{ secrets.MY_EMAIL }}
-        MY_USERNAME: ${{ secrets.MY_USERNAME }}
-    - run: yarn deploy
-      env:
-        CI: true
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist

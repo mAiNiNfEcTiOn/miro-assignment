@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emails-input adds a pill/block when inserts something and presses enter, comma or blurs out of the input. Marks it as valid or invalid based on being or not a valid e-mail 1`] = `
+<body>
+  <div
+    id="test"
+  >
+    <div
+      class="emails-input__root"
+    >
+      <div
+        class="emails-input__root__pill emails-input__root__pill--invalid"
+      >
+        <span>
+          test
+        </span>
+        <button
+          class="emails-input__root__pill__button"
+          type="button"
+        >
+          <svg
+            fill="none"
+            focusable="false"
+            height="8"
+            tabindex="-1"
+            viewBox="0 0 8 8"
+            width="8"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M8 0.8L7.2 0L4 3.2L0.8 0L0 0.8L3.2 4L0 7.2L0.8 8L4 4.8L7.2 8L8 7.2L4.8 4L8 0.8Z"
+              fill="#050038"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="emails-input__root__pill"
+      >
+        <span>
+          valid-email@miro.com
+        </span>
+        <button
+          class="emails-input__root__pill__button"
+          type="button"
+        >
+          <svg
+            fill="none"
+            focusable="false"
+            height="8"
+            tabindex="-1"
+            viewBox="0 0 8 8"
+            width="8"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M8 0.8L7.2 0L4 3.2L0.8 0L0 0.8L3.2 4L0 7.2L0.8 8L4 4.8L7.2 8L8 7.2L4.8 4L8 0.8Z"
+              fill="#050038"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="emails-input__root__pill"
+      >
+        <span>
+          another-valid-email@miro.com
+        </span>
+        <button
+          class="emails-input__root__pill__button"
+          type="button"
+        >
+          <svg
+            fill="none"
+            focusable="false"
+            height="8"
+            tabindex="-1"
+            viewBox="0 0 8 8"
+            width="8"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M8 0.8L7.2 0L4 3.2L0.8 0L0 0.8L3.2 4L0 7.2L0.8 8L4 4.8L7.2 8L8 7.2L4.8 4L8 0.8Z"
+              fill="#050038"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <input
+        class="emails-input__root__input"
+        placeholder="add more people..."
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`emails-input matches the expected initial rendering 1`] = `
+<body>
+  <div
+    id="test"
+  >
+    <div
+      class="emails-input__root"
+    >
+      <input
+        class="emails-input__root__input"
+        placeholder="add more people..."
+      />
+    </div>
+  </div>
+</body>
+`;

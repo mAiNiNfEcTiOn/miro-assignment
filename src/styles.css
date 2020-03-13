@@ -1,0 +1,115 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  min-height: 100%;
+  margin: 0;
+}
+
+.modal__overlay {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.modal__overlay__root {
+  background: #ffffff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  height: 100%;
+  max-height: 300px;
+  max-width: 540px;
+  width: 100%;
+}
+
+.modal__overlay__root__content,
+.modal__overlay__root footer {
+  padding: 32px 50px;
+}
+
+.modal__overlay__root__content {
+  background: #f8f8f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  height: 204px;
+  padding-bottom: 24px;
+}
+
+.modal__overlay__root__content h3 {
+  color: #050038;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 0 24px;
+}
+
+.modal__overlay__root__content__input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 96px;
+  flex: 0 0 96px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  max-height: 96px;
+}
+
+.modal__overlay__root footer {
+  height: 96px;
+  padding-top: 24px;
+}
+
+.modal__overlay__root footer button {
+  background: #4262ff;
+  border-radius: 6px;
+  border: none;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  margin-right: 16px;
+  padding: 8px 16px;
+  text-align: center;
+}
+
+.modal__overlay__root footer button:last-child {
+  margin-right: 0;
+}

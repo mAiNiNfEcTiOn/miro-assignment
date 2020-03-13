@@ -4,7 +4,7 @@
   "description": "Miro.com's Technical Assessment",
   "main": "index.html",
   "scripts": {
-    "build": "parcel build index.html",
+    "build": "parcel build --public-url \"$PUBLIC_URL\" index.html",
     "deploy": "gh-pages -d dist",
     "start": "parcel index.html --open",
     "test": "jest"

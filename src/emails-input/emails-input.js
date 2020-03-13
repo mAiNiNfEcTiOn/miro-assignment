@@ -1,6 +1,9 @@
 import "./emails-input.css";
 
+/** IIFE :) */
 ((window, document) => {
+
+  /** Initializes an array of chars to pick random chars from to create the e-mails */
   const chars = [];
   for (let charCode = 48; charCode <= 57; charCode += 1) {
     chars.push(String.fromCharCode(charCode));
@@ -14,6 +17,13 @@ import "./emails-input.css";
     chars.push(String.fromCharCode(charCode));
   }
 
+  /**
+   * Generates a 'miro.com' e-mail where the left part is randomly generated.
+   * 
+   * @function generateRandomEmail
+   * @param {number} size Number of characters to be randomly generated for the left side of the e-mail
+   * @returns {string} The random 'miro.com' e-mail
+   */
   function generateRandomEmail(size = 8) {
     let email = "";
     for (let charCounter = 0; charCounter < size; charCounter += 1) {
@@ -25,17 +35,29 @@ import "./emails-input.css";
     return email;
   }
 
+  /**
+   * This function handles the value's input.
+   * It validates if it has been already inserted and ignores empty strings.
+   * Also validates against an input[type="email"] which obeys to the RFC 5322.
+   * 
+   * @function handleInputValue
+   * @param {object} config
+   * @param {HTMLElement} config.node
+   * @param {array} config.store
+   * @param {string} config.value
+   */
   function handleInputValue(config) {
     const value = config.value;
     const store = config.store;
 
     if (value) {
       value.split(",").forEach(item => {
+        item = item && item.trim();
+        
         if (!item) {
           return;
         }
 
-        item = item.trim();
 
         const alreadyExists = store.some(record => record.value === item);
 
@@ -59,8 +81,14 @@ import "./emails-input.css";
   }
 
   /**
+   * Generates a Pill component used to display the inserted e-mails.
    * 
-   * @param {*} config 
+   * @function Pill
+   * @param {object} config
+   * @param {boolean} config.isValid
+   * @param {array} config.store
+   * @param {string} config.value
+   * @returns {HTMLElement} The container div of the pill
    */
   function Pill(config) {
     const containerDiv = document.createElement("div");
@@ -97,11 +125,19 @@ import "./emails-input.css";
       containerDiv.classList.add("emails-input__root__pill--invalid");
     }
 
+    /** Prevents the rootDiv from moving the focus to input just by clicking on the pill */
     containerDiv.addEventListener('click', (e) => e.stopPropagation());
 
     return containerDiv;
   }
 
+  /**
+   * Generates an Input (input[type="text"]) component used to type and insert the e-mail
+   * 
+   * @function Pill
+   * @param {array} store
+   * @returns {HTMLElement} The container div of the pill
+   */
   function Input(store) {
     const input = document.createElement("input");
     input.className = "emails-input__root__input";
@@ -158,6 +194,14 @@ import "./emails-input.css";
     return input;
   }
 
+  /**
+   * Generates the emails-input component setting the APIs in the target container
+   * and triggering the subcomponents to render.
+   * Creates and "owns" the store where the e-mails are registered.
+   * 
+   * @function EmailsInput
+   * @param {HTMLElement} container Target container where to build the emails-input component
+   */
   function EmailsInput(container) {
     const subscriptions = [];
     const emailsStore = [];

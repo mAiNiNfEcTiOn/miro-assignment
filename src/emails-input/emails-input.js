@@ -58,7 +58,6 @@ import "./emails-input.css";
           return;
         }
 
-
         const alreadyExists = store.some(record => record.value === item);
 
         if (alreadyExists) {
@@ -154,6 +153,10 @@ import "./emails-input.css";
 
       /** Handles pressing ',' or 'Enter' */
       if ([188, 13].indexOf(e.keyCode) !== -1) {
+        if (e.keyCode === 188 && e.currentTarget.value.substr(-1) !== ',' ) {
+          return;
+        }
+        
         handleInputValue({ node: node, store: store, value: node.value });
         node.value = "";
       }

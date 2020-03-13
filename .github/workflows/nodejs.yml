@@ -33,9 +33,9 @@ jobs:
       env:
         CI: true
     - run: |
-        git config --global user.email "${{ MY_EMAIL }}"
-        git config --global user.name "${{ MY_USERNAME }}"
-        git remote set-url origin "https://${{ GH_TOKEN }}@github.com/${{ MY_USERNAME }}/${{ github.repository }}.git"
+        git config --global user.email "$MY_EMAIL"
+        git config --global user.name "$MY_USERNAME"
+        git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}@github.com/$MY_USERNAME/${{ github.repository }}.git"
       env:
         MY_EMAIL: ${{ secrets.MY_EMAIL }}
         MY_USERNAME: ${{ secrets.MY_USERNAME }}

@@ -46,7 +46,7 @@ describe("emails-input", () => {
     expect(firstPill).toHaveClass("emails-input__root__pill--invalid");
 
     /** Comma */
-    input.value = "valid-email@miro.com";
+    input.value = "valid-email@miro.com,";
     fireEvent.keyUp(input, { key: ",", keyCode: 188 });
     await waitFor(() =>
       expect(
@@ -288,7 +288,7 @@ describe("emails-input", () => {
     myFn.mockClear();
 
     // Adds another valid e-mail
-    input.value = "my@email.dom";
+    input.value = "my@email.dom,";
     fireEvent.keyUp(input, { key: ",", keyCode: 188 });
     await waitFor(() =>
       expect(

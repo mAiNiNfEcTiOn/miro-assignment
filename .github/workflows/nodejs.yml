@@ -32,7 +32,7 @@ jobs:
     - run: yarn build
       env:
         CI: true
-        PUBLIC_URL: "miro-assignment/"
+        PUBLIC_URL: "./"
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

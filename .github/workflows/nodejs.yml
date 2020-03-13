@@ -27,7 +27,17 @@ jobs:
     - run: npm i -g yarn@latest
     - run: yarn install --frozen-lockfile
     - run: yarn test
+      env:
+        CI: true
     - run: yarn build
+      env:
+        CI: true
+    - run: |
+        git config --global user.email "$MY_EMAIL"
+        git config --global user.name "$MY_USERNAME"
+      env:
+        MY_EMAIL: ${{ secrets.MY_EMAIL }}
+        MY_USERNAME: ${{ secrets.MY_USERNAME }}
     - run: yarn deploy
       env:
         CI: true
